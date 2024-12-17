@@ -45,14 +45,14 @@ const ListTodos = () => {
 
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [todos]);
 
   return (
     <div>
       {todos.map((todo) => (
         <div
           key={todo.todo_id}
-          className="bg-[#1C5149] w-[60%] m-auto h-16 rounded-xl px-4 py-2 mt-5 flex justify-between items-center">
+          className="bg-[#1C5149] w-[50%] m-auto h-16 rounded-xl px-4 py-2 mt-5 flex justify-between items-center">
           <div
             className={`${
               todo.completed

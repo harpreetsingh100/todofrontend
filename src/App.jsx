@@ -10,7 +10,7 @@ function App() {
           <InputTodo />
         </div>
       </div>
-      <div className="bg-[#C8DAD3] h-[70vh] py-2">
+      <div className="bg-[#C8DAD3] h-[70vh] py-2 overflow-auto">
         <ListTodos />
       </div>
     </div>
