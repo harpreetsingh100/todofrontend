@@ -5,7 +5,7 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:4000/todos");
+      const response = await fetch("https://todobackend-puce.vercel.app/todos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
@@ -15,7 +15,7 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      await fetch(`http://localhost:4000/todos/${id}`, {
+      await fetch(`https://todobackend-puce.vercel.app/todos/${id}`, {
         method: "DELETE",
       });
       setTodos(todos.filter((todo) => todo.todo_id !== id));
@@ -26,9 +26,12 @@ const ListTodos = () => {
 
   const handleToggleComplete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:4000/todos/${id}/toggle`, {
-        method: "PUT",
-      });
+      const response = await fetch(
+        `https://todobackend-puce.vercel.app/todos/${id}/toggle`,
+        {
+          method: "PUT",
+        }
+      );
       const updatedTodo = await response.json();
       setTodos((prevTodos) =>
         prevTodos.map((todo) =>

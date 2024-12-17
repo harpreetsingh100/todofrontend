@@ -10,11 +10,14 @@ const InputTodo = () => {
     }
     try {
       const body = { description };
-      const response = await fetch("http://localhost:4000/todos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        "https://todobackend-puce.vercel.app/todos",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
 
       window.location = "/";
     } catch (err) {
